@@ -4,6 +4,9 @@
 static char command[COMMAND_SIZE];
 
 int main(void) {
+    // stdoutにおいてstdioのバッファリングを無効にする
+    if (setvbuf(stdout, NULL, _IONBF, 0) != 0)
+        errExit("setvbuf");
     pid_t pid;
 
     write(0, "INIT_DONE\n", 10);
