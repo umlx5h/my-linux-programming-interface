@@ -3,3 +3,4 @@
 a.out
 .gdb_history
 *.s
+*.o
