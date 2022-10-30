@@ -45,7 +45,6 @@ main(int argc, char *argv[])
     gmp = gmtime(&t);
     if (gmp == NULL)
         errExit("gmtime");
-
     // deepcopyではないのでポインタ型は参照をコピー
     gm = *gmp;          /* Save local copy, since *gmp may be modified
                            by asctime() or gmtime() */

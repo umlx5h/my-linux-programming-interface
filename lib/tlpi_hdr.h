@@ -31,6 +31,8 @@
 
 #include "error_functions.h"  /* Declares our error-handling functions */
 
+#include "my.h"
+
 /* Unfortunately some UNIX implementations define FALSE and TRUE -
    here we'll undefine them */
 
