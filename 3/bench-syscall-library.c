@@ -4,14 +4,15 @@
 
 
 int add(int a, int b) {
-    return + b;
+    return a + b;
 }
 
 
 int main() {
 
     int i;
-    for (i = 0; i < 10000 * 10000; i++) {
+    // for (i = 0; i < 10000 * 10000; i++) {
+    for (;;) {
         add(i, 1000);
     }
 
