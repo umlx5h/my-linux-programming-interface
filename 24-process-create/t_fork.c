@@ -8,6 +8,7 @@ main(int argc, char *argv[])
     int istack = 222; /* Allocated in stack segment */
     pid_t childPid;
 
+    write(2, "before fork:\n", 13);
     switch (childPid = fork()) {
     case -1:
         errExit("fork");
