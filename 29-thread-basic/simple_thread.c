@@ -20,6 +20,7 @@ main(int argc, char *argv[])
     void *res;
     int s;
 
+    // stop("before thread");
     s = pthread_create(&t1, NULL, threadFunc, "Hello world\n");
     if (s != 0)
         errExitEN(s, "pthread_create");
