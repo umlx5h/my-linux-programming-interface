@@ -5,7 +5,7 @@ static void *
 threadFunc(void *arg)
 {
     char *s = (char *) arg;
-    printf("%s", s);
+    printf("[%d:%d:%ld] %s", getpid(), gettid(), (long) pthread_self(), s);
 
     // stop("sub");
     // equivelent
@@ -25,7 +25,7 @@ main(int argc, char *argv[])
     if (s != 0)
         errExitEN(s, "pthread_create");
     
-    printf("Message from main()\n");
+    printf("[%d:%d:%ld] Message from main()\n", getpid(), gettid(), (long) pthread_self());
     // stop("main");
     s = pthread_join(t1, &res);
     if (s != 0)
