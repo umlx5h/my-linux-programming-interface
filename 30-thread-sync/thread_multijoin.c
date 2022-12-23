@@ -74,6 +74,7 @@ main(int argc, char *argv[])
 
     /* Join with terminated threads */
     while (numLive > 0) {
+        printf("main loop\n");
         s = pthread_mutex_lock(&threadMutex);
         if (s != 0)
             errExitEN(s, "pthread_mutex_lock");
