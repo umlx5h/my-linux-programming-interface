@@ -6,7 +6,7 @@
 /* Maximum length of string returned by strerror() */
 #define MAX_ERROR_LEN 256
 
-static char buf[MAX_ERROR_LEN]; /* Statiacally allocated return buffer */
+static __thread char buf[MAX_ERROR_LEN]; /* Thread-local return buffer */
 
 char *
 strerror(int err)
