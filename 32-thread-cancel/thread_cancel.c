@@ -8,8 +8,8 @@ threadFunc(void *arg)
 
     printf("New thread started\n"); /* May be a cancellation point */
     for (j = 1; ; j++) {
-        // printf("Loop %d\n", j);     /* May be a cancellation point */
-        // sleep(1);                   /* A cancellation point */
+        printf("Loop %d\n", j);     /* May be a cancellation point */
+        sleep(1);                   /* A cancellation point */
         // pthread_testcancel();
     }
 

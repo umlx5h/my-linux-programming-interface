@@ -7,7 +7,7 @@ threadFunc(void *arg)
     char *s = (char *) arg;
     printf("[%d:%d:%ld] %s", getpid(), gettid(), (long) pthread_self(), s);
 
-    // stop("sub");
+    stop("sub");
     // equivelent
     // pthread_exit((void *) strlen(s));
     return (void *) strlen(s);
@@ -33,5 +33,6 @@ main(int argc, char *argv[])
 
     printf("Thread returned %ld\n", (long) res);
 
+    stop("after join");
     exit(EXIT_SUCCESS);
 }
