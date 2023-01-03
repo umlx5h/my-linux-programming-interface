@@ -7,10 +7,10 @@ threadFunc(void *arg)
     char *s = (char *) arg;
     printf("[%d:%d:%ld] %s", getpid(), gettid(), (long) pthread_self(), s);
 
-    stop("sub");
+    // stop("sub");
     // equivelent
-    // pthread_exit((void *) strlen(s));
-    return (void *) strlen(s);
+    pthread_exit((void *) strlen(s));
+    // return (void *) strlen(s);
 }
 
 int
