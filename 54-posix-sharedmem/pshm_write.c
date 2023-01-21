@@ -25,4 +25,10 @@ main(int argc, char *argv[])
     if (addr == MAP_FAILED)
         errExit("mmap");
     
+    if (close(fd) == -1) /* 'fd' is no longer needed */
+        errExit("close");
+    
+    printf("copying %ld bytes\n", (long) len);
+    memcpy(addr, argv[2], len);
+    exit(EXIT_SUCCESS);
 }
