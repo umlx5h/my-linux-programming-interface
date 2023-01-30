@@ -2,12 +2,18 @@
 #include <fcntl.h>
 #include "curr_time.h"
 #include "tlpi_hdr.h"
+#include "create_pid_file.h"
 
 int
 main(int argc, char *argv[])
 {
     int fd, lock;
     const char *lname;
+
+    // if (createPidFile(argv[0], "./hoge.pid", 0) == -1)
+    //     errExit("createPidFile");
+    
+    // sleep(100);
 
     if (argc < 3 || strcmp(argv[1], "--help") == 0 ||
             strchr("sx", argv[2][0]) == NULL)
