@@ -31,6 +31,7 @@ main(void)
 
 	if (fork() == 0) {  /* child */
         close(sv[0]);
+		sleep(3);
 		read(sv[1], &buf, 1);
 		printf("child: read '%c'\n", buf);
 		buf = toupper(buf);  /* make it uppercase */
