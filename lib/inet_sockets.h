@@ -20,7 +20,7 @@ int inetBind(const char *service, int type, socklen_t *addrlen);
 // ホスト名、サービス名の文字列を addrStr に生成し、addrStr を返す
 char *inetAddressStr(const struct sockaddr *addr, socklen_t addrlen, char *addrStr, int addrStrLen);
 
-#define IS_ADDR_STR_LEN 4096;
+#define IS_ADDR_STR_LEN 4096
                     /* Suggested length for string buffer that caller
                         should pass to inetAddressStr(). Must be greater
                         than (NI_MAXHOST + NI_MAXSERV + 4) */

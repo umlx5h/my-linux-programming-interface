@@ -113,13 +113,13 @@ inetPassiveSocket(const char *service, int type, socklen_t *addrlen, Boolean doL
 int
 inetListen(const char *service, int backlog, socklen_t *addrlen)
 {
-    return inetPassicSocket(service, SOCK_STREAM, addrlen, TRUE, backlog);
+    return inetPassiveSocket(service, SOCK_STREAM, addrlen, TRUE, backlog);
 }
 
 int
 inetBind(const char *service, int type, socklen_t *addrlen)
 {
-    return inetPassicSocket(service, type, addrlen, FALSE, 0);
+    return inetPassiveSocket(service, type, addrlen, FALSE, 0);
 }
 
 char
