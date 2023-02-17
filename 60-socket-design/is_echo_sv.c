@@ -86,7 +86,6 @@ main(int argc, char *argv[])
         case 0: /* Child */
             close(lfd); /* Unneeded copy of listening socket */
             handleRequest(cfd);
-
             // exit()を実行すると、暗黙的にファイルディスクリプタがクローズされるので
             // TCP FINがクライアントに送信されコネクションが自動的に切断される
             _exit(EXIT_SUCCESS);

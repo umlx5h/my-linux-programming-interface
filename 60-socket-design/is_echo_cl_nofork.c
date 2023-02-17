@@ -30,11 +30,11 @@ main(int argc, char *argv[])
         printf("%.*s", (int) numRead, buf);
     }
 
-    // if (close(sfd) == -1)
-    //     errExit("close");
+    if (close(sfd) == -1)
+        errExit("close");
 
-    if (shutdown(sfd, SHUT_WR) == -1)
-        errExit("shutdown");
+    // if (shutdown(sfd, SHUT_WR) == -1)
+    //     errExit("shutdown");
 
     exit(EXIT_SUCCESS);
 }
