@@ -24,7 +24,6 @@
    If 'format' is NULL, we use "%c" as a specifier (which gives the'
    date and time as for ctime(3), but without the trailing newline).
    Returns NULL on error. */
-
 char *
 currTime(const char *format)
 {

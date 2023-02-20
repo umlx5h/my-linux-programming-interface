@@ -47,7 +47,6 @@ terminate(Boolean useExit3)
 
       * outputting the caller-supplied error message specified in
         'format' and 'ap'. */
-
 static void
 outputError(Boolean useErr, int err, Boolean flushStdout,
         const char *format, va_list ap)
@@ -81,7 +80,6 @@ outputError(Boolean useErr, int err, Boolean flushStdout,
 
 /* Display error message including 'errno' diagnostic, and
    return to caller */
-
 void
 errMsg(const char *format, ...)
 {
@@ -99,7 +97,6 @@ errMsg(const char *format, ...)
 
 /* Display error message including 'errno' diagnostic, and
    terminate the process */
-
 void
 errExit(const char *format, ...)
 {
@@ -126,7 +123,6 @@ errExit(const char *format, ...)
    because of an error: the child must terminate without flushing
    stdio buffers that were partially filled by the caller and without
    invoking exit handlers that were established by the caller. */
-
 void
 err_exit(const char *format, ...)
 {

@@ -25,7 +25,6 @@
    async-signal-safe (see Section 21.1.2). As such, this function is
    also not async-signal-safe (i.e., beware of calling it from a
    SIGCHLD handler). */
-
 void                    /* Examine a wait() status using the W* macros */
 printWaitStatus(const char *msg, int status)
 {

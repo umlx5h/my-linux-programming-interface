@@ -32,7 +32,6 @@
    name of the calling program (i.e., argv[0] or similar), and is used only for
    diagnostic messages. If we can't open 'pidFile', or we encounter some other
    error, then we print an appropriate diagnostic and terminate. */
-
 int
 createPidFile(const char *progName, const char *pidFile, int flags)
 {

@@ -19,7 +19,8 @@
 #include "become_daemon.h"
 #include "tlpi_hdr.h"
 
-int                                     /* Returns 0 on success, -1 on error */
+/* Returns 0 on success, -1 on error */
+int
 becomeDaemon(int flags)
 {
     int maxfd, fd;

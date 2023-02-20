@@ -25,7 +25,6 @@
   first (n - 1) bytes. The function return value is the number of bytes
   placed in buffer (which includes the newline character if encountered,
   but excludes the terminating null byte). */
-
 ssize_t
 readLine(int fd, void *buffer, size_t n)
 {

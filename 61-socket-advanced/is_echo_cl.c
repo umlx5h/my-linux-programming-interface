@@ -28,7 +28,7 @@ main(int argc, char *argv[])
                 break;
             printf("%.*s", (int) numRead, buf);
         }
-        sleep(10000);
+        // sleep(10000);
         exit(EXIT_SUCCESS);
     
     default: /* Parent: write contents of stdin to socket */

@@ -48,7 +48,8 @@ inetConnect(const char *host, const char *service, int type)
     return (rp == NULL) ? -1 : sfd;
 }
 
-static int /* Public interfaces: inetBind() and inetListen() */
+/* Public interfaces: inetBind() and inetListen() */
+static int 
 inetPassiveSocket(const char *service, int type, socklen_t *addrlen, Boolean doListen, int backlog)
 {
     struct addrinfo hints;

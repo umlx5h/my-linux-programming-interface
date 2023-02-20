@@ -45,7 +45,6 @@ gnFail(const char *fname, const char *msg, const char *arg, const char *name)
    'fname' is the name of our caller, and 'name' is the name associated with
    the command-line argument 'arg'. 'fname' and 'name' are used to print a
    diagnostic message in case an error is detected when processing 'arg'. */
-
 static long
 getNum(const char *fname, const char *arg, int flags, const char *name)
 {
@@ -78,7 +77,6 @@ getNum(const char *fname, const char *arg, int flags, const char *name)
 
 /* Convert a numeric command-line argument string to a long integer. See the
    comments for getNum() for a description of the arguments to this function. */
-
 long
 getLong(const char *arg, int flags, const char *name)
 {
@@ -87,7 +85,6 @@ getLong(const char *arg, int flags, const char *name)
 
 /* Convert a numeric command-line argument string to an integer. See the
    comments for getNum() for a description of the arguments to this function. */
-
 int
 getInt(const char *arg, int flags, const char *name)
 {

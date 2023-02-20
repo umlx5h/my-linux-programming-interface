@@ -24,7 +24,6 @@
    is not async-signal-safe (see Section 21.1.2). As such, these
    functions are also not async-signal-safe (i.e., beware of
    indiscriminately calling them from signal handlers). */
-
 void                    /* Print list of signals within a signal set */
 printSigset(FILE *of, const char *prefix, const sigset_t *sigset)
 {
@@ -42,7 +41,8 @@ printSigset(FILE *of, const char *prefix, const sigset_t *sigset)
         fprintf(of, "%s<empty signal set>\n", prefix);
 }
 
-int                     /* Print mask of blocked signals for this process */
+/* Print mask of blocked signals for this process */
+int
 printSigMask(FILE *of, const char *msg)
 {
     sigset_t currMask;
@@ -58,7 +58,8 @@ printSigMask(FILE *of, const char *msg)
     return 0;
 }
 
-int                     /* Print signals currently pending for this process */
+/* Print signals currently pending for this process */
+int
 printPendingSigs(FILE *of, const char *msg)
 {
     sigset_t pendingSigs;

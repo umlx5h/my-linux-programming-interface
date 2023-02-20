@@ -24,7 +24,6 @@
    "value.sec[/value.nanosec][:interval.sec[/interval.nanosec]]".
    Optional components that are omitted cause 0 to be assigned to the
    corresponding structure fields. */
-
 void
 itimerspecFromStr(char *str, struct itimerspec *tsp)
 {
