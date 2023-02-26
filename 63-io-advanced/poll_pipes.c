@@ -6,8 +6,9 @@ int
 main(int argc, char *argv[])
 {
     int numPipes, j, ready, randPipe, numWrites;
+    // int[2]配列へのポインタ
     int (*pfds)[2]; /* File descriptors for all pipes */
-    // int *pfds[2];
+    // int *pfds_2[2]; // これだとintポインタの配列になってしまう
     struct pollfd *pollFd; /* Array of pollfd */
 
     if (argc < 2 || strcmp(argv[1], "--help") == 0)
