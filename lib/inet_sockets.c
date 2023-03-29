@@ -101,7 +101,7 @@ inetPassiveSocket(const char *service, int type, socklen_t *addrlen, Boolean doL
         }
     }
 
-    if (rp != NULL & addrlen != NULL) {
+    if (rp != NULL && addrlen != NULL) {
         *addrlen = rp->ai_addrlen; /* Return address structure size */
     }
 
