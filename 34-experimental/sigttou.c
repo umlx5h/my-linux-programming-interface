@@ -22,7 +22,7 @@ main(int argc, char *argv[])
         setpgid(0, 0);
         // fgetc(stdin); // 端末から読み取ろうとすると必ずSIGTTIN
         // printf("write from child!\n"); // tostopフラグが有効になっている場合はSIGTTOU
-        // execlp("stty", "stty", "intr", "q", NULL); // tcsetattr(3)を呼ぶとtostopフラグに関わらずSIGTTOU
+        execlp("stty", "stty", "intr", "q", NULL); // tcsetattr(3)を呼ぶとtostopフラグに関わらずSIGTTOU
 
         // stop("child");
         exit(EXIT_SUCCESS);
