@@ -93,7 +93,7 @@ my_system(const char *command)
 
 
 int
-main(int argc, char *argv)
+main(int argc, char *argv[])
 {
     char str[MAX_CMD_LEN];
     int status;
@@ -105,8 +105,8 @@ main(int argc, char *argv)
             break;
         
         // status = system(str);
-        // status = simple_system(str);
-        status = my_system(str);
+        status = simple_system(str);
+        // status = my_system(str);
         printf("system(3) returned: status=0x%04x (%d,%d)\n",
             (unsigned int) status, status >> 8, status & 0xff);
         

@@ -6,8 +6,12 @@
 #include "tlpi_hdr.h"
 
 #include "syslog_printf.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
 
-#define SERVICE "echo"
+// #define SERVICE "echo"
+#define SERVICE "12345"
 #define BUF_SIZE 4096
 
 static void
@@ -68,12 +72,21 @@ main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    // MEMO: TCP_DEFER_ACCEPTを設定すると、1st byteが来るまでaccept(2)がリターンせずコネクションがSYN_RECVの状態で止まる
+    // クライアント側でconnect(2)を実行しても、write(2)でソケットにデータを1バイトでも書き込まない限りaccept(2)がリターンしない
+    // apacheで使われていた！！！
+    int timeout = 20;
+    if (setsockopt(lfd, IPPROTO_TCP, TCP_DEFER_ACCEPT, &timeout, sizeof(int)) == -1) {
+        errExit("setsockopt");
+    }
+
     for (;;) {
         cfd = accept(lfd, NULL, NULL); /* Wait for connection */
         if (cfd == -1) {
             syslog(LOG_ERR, "Failure in accept(): %s", strerror(errno));
             exit(EXIT_FAILURE);
         }
+        stop("accept success");
 
         /* Handle each client request in a new child process */
         switch (fork()) {

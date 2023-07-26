@@ -19,7 +19,7 @@ threadFunc(void *arg)
 }
 
 int
-main(int argc, char *argv)
+main(int argc, char *argv[])
 {
     pthread_t thr;
     int s;

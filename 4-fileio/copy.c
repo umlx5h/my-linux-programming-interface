@@ -30,12 +30,13 @@ int main(int argc, char *argv[])
         errExit("opening file %s", argv[2]);
 
     /* Transfer data until we encounter end of input or an error */
-    while ((numRead = read(inputFd, buf, BUF_SIZE)) > 0)
+    while ((numRead = read(inputFd, buf, BUF_SIZE)) > 0) {
         if (write(outputFd, buf, numRead) != numRead)
             fatal("write() returned error or partial write occurred");
+        // fsync(outputFd);
+    }
     if (numRead == -1)
         errExit("read");
-
     if (close(inputFd) == -1)
         errExit("close input");
     if (close(outputFd) == -1)
