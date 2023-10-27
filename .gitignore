@@ -5,3 +5,4 @@ a.out
 *.s
 *.o
 *.so
+.cache/
